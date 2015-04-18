@@ -1,0 +1,661 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>jekyll bootstrap + github pages でブログ運用 - site title</title>
+   
+    <script src="/middleman-aks-demo/javascripts/all.js" type="text/javascript"></script>
+    <link href="/middleman-aks-demo/stylesheets/all.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+	<!-- header eyecatch -->
+	<div class="pane">
+	  <header class="eyecatch pane" id="header">
+	    <div class="sitename"><a href="../../">site title</a></div>
+	  </header>
+	</div>
+	<!-- navbar -->
+	<div class="pane">
+	  	<nav class="navbar navbar-default">
+	  <div class="navbar-header">
+	    <button type="button" data-toggle="collapse" data-target="#topHeader" class="navbar-toggle">
+	      <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar">
+	      <span class="icon-bar">
+	      <span class="icon-bar">
+	    </button>
+	    <a class="navbar-brand" href="../../">Home</a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="topHeader">
+	    <ul class="nav navbar-nav">
+ 	      <li><a href="../archives.html">Archives</a></li>
+ 	      <li><a href="../../categories.html">Categories</a></li>
+ 	      <li><a href="../../profile.html">Profile</a></li>
+ 	      <li><a href="../../sitemap.html">Sitemap</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+	</div>
+      </div>
+
+      <!-- sidebar / main -->
+      <div class="row">
+	<div class="pane col-sm-9" id="main">
+	  
+<article>
+  <header>
+    <nav class="crumbs"><ol class="breadcrumb"><li><a href="../../">Home</a></li><li><a href="../categories/software.html">software</a></li><li class="active">jekyll bootstrap + github pages でブログ運用</li></ol></nav>
+    <h1>jekyll bootstrap + github pages でブログ運用</h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../categories/software.html">software</a>  |
+02 Nov 2014 |
+<a href="jekyll-bootstrap.html">permalink</a>
+ |
+</small>
+
+    </section>
+
+    <div class="toc"><button type="button" class="btn btn-default btn-sm toc_button" data-toggle="collapse" data-target="#toc_content">ToC</button><div id="toc_content" class="toc_content collapse "><ul>
+<li>
+<a href="#概要">概要</a>
+</li>
+<li>
+<a href="#セットアップ">セットアップ</a>
+<ul>
+<li>
+<a href="#ローカルにjeklly-bootstrap-のインストール">ローカルにjeklly-bootstrap のインストール</a>
+</li>
+<li>
+<a href="#github.io-上へインストール">github.io 上へインストール</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#設定">設定</a>
+</li>
+<li>
+<a href="#運用">運用</a>
+</li>
+<li>
+<a href="#ページの編集">ページの編集</a>
+</li>
+<li>
+<a href="#~~~yaml">~~~yaml</a>
+</li>
+<li>
+<a href="#group:-navigation">group: navigation</a>
+<ul>
+<li>
+<a href="#ポスト">ポスト</a>
+</li>
+<li>
+<a href="#ローカルで確認">ローカルで確認</a>
+</li>
+<li>
+<a href="#サーバーへ-push">サーバーへ push</a>
+</li>
+<li>
+<a href="#makefile-で簡略化">makefile で簡略化</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#カスタマイズ">カスタマイズ</a>
+<ul>
+<li>
+<a href="#レイアウトの変更">レイアウトの変更</a>
+</li>
+<li>
+<a href="#pygments">Pygments</a>
+</li>
+<li>
+<a href="#ウェブ上での編集">ウェブ上での編集</a>
+</li>
+<li>
+<a href="#見出し番号">見出し番号</a>
+</li>
+<li>
+<a href="#トップで最新記事を表示">トップで最新記事を表示</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#%-vi-index.md">% vi index.md</a>
+</li>
+<li>
+<a href="#layout:-default">layout: default</a>
+<ul>
+<li>
+<a href="#プラグイン">プラグイン</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#tips">Tips</a>
+<ul>
+<li>
+<a href="#.emacs">.emacs</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#参考文献">参考文献</a>
+</li>
+</ul>
+</div></div>
+  </header>
+
+  <section class="content numbering_headings">
+    <h2 id="概要">概要</h2>
+
+<p>ローカルで markdown ガリガリ書いてローカルで確認、サーバーへアップロードまで CUI でサクサクできるのでよいです。軽いし。</p>
+
+<p>jekyll 単体だといろいろ面倒なので、ブログ作成支援や bootstrap を使ったレイアウトなどがついてる jekyll bootstrap を使います。
+動作を理解するためには、まず jekyll 単体を触ってみたほうがいいかもですが。</p>
+
+<h2 id="セットアップ">セットアップ</h2>
+
+<p>基本的には <a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html">Jekyll Quick Start | ruhoh universal static blog generator</a>
+に従えばいいのですが、一応ステップバイステップで。ローカルで動かす→サーバーで動かす、という順でいきます。</p>
+
+<h3 id="ローカルにjeklly-bootstrap-のインストール">ローカルにjeklly-bootstrap のインストール</h3>
+
+<p>まず jekyll を入れます：</p>
+<pre class="highlight plaintext"><code>% sudo gem install jekyll
+</code></pre>
+
+<p>次に jekyll-bootstrap。git clone でローカルに持ってきます。<em>username</em> は自分のユーザ名に変えてください。</p>
+<pre class="highlight plaintext"><code>% git clone https://github.com/plusjade/jekyll-bootstrap.git _username_.github.io
+
+</code></pre>
+
+<p>そして、サーバー稼働：</p>
+<pre class="highlight plaintext"><code>% cd _username_.github.io
+% jekyll serve
+...
+    Server address: http://0.0.0.0:4000/
+  Server running... press ctrl-c to stop.
+</code></pre>
+
+<p>と出てくれば、 <a href="http://localhost:4000/">http://localhost:4000/</a> で動作が確認できます。そしたらgithub.io 上に持って行きましょう。</p>
+
+<p>また、&ndash;port 3000　などとすればポートを指定できます。</p>
+
+<h3 id="github.io-上へインストール">github.io 上へインストール</h3>
+
+<p>まず、<a href="https://github.com/new">https://github.com/new</a> から &ldquo;<em>username</em>.github.io&rdquo; というレポジトリを作成します。&quot;Initialize this repository with a README&quot; はチェックしなくてもよい。</p>
+
+<p>そうしたら、remote repository として github.io を指定し、push します。パスワードを聞かれるので入力すること。url として <a href="https://username:password@github.com">https://username:password@github.com</a>&hellip;. とすると省略できますが、非推奨。</p>
+<pre class="highlight plaintext"><code>% git remote set-url origin  https://_username_@github.com/_username_/_username_.github.io.git
+% git push origin master
+Password:
+</code></pre>
+
+<p>http://<em>username</em>.github.io で動作確認します。</p>
+
+<h2 id="設定">設定</h2>
+
+<p>_config.ymlで、author: 以下の name, email などを適宜設定。</p>
+
+<p>markdown は redcarpet にしとくと吉</p>
+<pre class="highlight yaml"><code><span class="s">title</span> <span class="pi">:</span> <span class="s">A Sample Blog</span>
+<span class="s">author</span> <span class="pi">:</span>
+  <span class="s">name</span> <span class="pi">:</span> <span class="s">Your Name</span>
+  <span class="s">email</span> <span class="pi">:</span> <span class="s">your@mail.address.com</span>
+  <span class="s">github</span> <span class="pi">:</span> <span class="s">username</span>
+  <span class="s">twitter</span> <span class="pi">:</span> <span class="s">account_name</span>
+
+<span class="s">markdown</span><span class="pi">:</span> <span class="s">redcarpet</span>
+<span class="s">redcarpet</span><span class="pi">:</span>
+  <span class="s">extensions</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">autolink"</span><span class="pi">]</span>
+</code></pre>
+
+<h2 id="運用">運用</h2>
+
+<p>運用形態としては、ローカルで *.md を編集→ ローカル上で確認→ サーバーへ push、という形になります。</p>
+
+<h2 id="ページの編集">ページの編集</h2>
+
+<p>あまり変更のない固定ページ。直下にabout.md などを作ると、about.html に変換してくれます。</p>
+<pre class="highlight plaintext"><code>% rake page name="about"
+</code></pre>
+
+<p>name=以下を省略すると &ldquo;new-page&rdquo; となります。</p>
+
+<p>YAMLヘッダで group: navigation と追加すると、ナビゲーションバーに入れてくれます。</p>
+<pre class="highlight yaml"><code><span class="nn">---</span>
+<span class="s">layout</span><span class="pi">:</span> <span class="s">page</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">About"</span>
+<span class="s">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+<span class="s">group</span><span class="pi">:</span> <span class="s">navigation</span>
+<span class="nn">---</span>
+<span class="s">this is an about page.</span>
+</code></pre>
+
+<h3 id="ポスト">ポスト</h3>
+
+<p>ブログの記事を編集、追加します。</p>
+<pre class="highlight plaintext"><code>rake post title="test"
+</code></pre>
+
+<p>とすると &ldquo;_posts/2014-11-01-test.md&rdquo; が作られるので、これを編集します。
+title=以下を省略すると &ldquo;new-post&rdquo; になります。</p>
+
+<h3 id="ローカルで確認">ローカルで確認</h3>
+
+<p>&ndash;watch オプションをつけると、ファイルを変更すると自動的に再生成してくれます。
+また、vagrant などで外で編集すると変更を検知してくれないので、&ndash;force_polling をつけます。
+ラグがあるときは、明示的に &ldquo;jekyll build&rdquo; してしまってもよい。</p>
+<pre class="highlight plaintext"><code>% jekyll serve --watch --force_polling
+</code></pre>
+
+<h3 id="サーバーへ-push">サーバーへ push</h3>
+
+<p>ふつーに add, commit, push します：</p>
+<pre class="highlight plaintext"><code>% git add .
+% git commit -m blog -a
+% git push origin master
+</code></pre>
+
+<h3 id="makefile-で簡略化">makefile で簡略化</h3>
+
+<p>いろいろタイプするのが面倒なので、makefile を作っておくと楽です：</p>
+<pre class="highlight make"><code><span class="nl">build</span><span class="o">:</span>
+    <span class="err">jekyll</span> <span class="err">build</span>
+
+<span class="nl">cmt</span><span class="o">:</span>
+    <span class="err">git</span> <span class="err">status</span>
+    <span class="err">git</span> <span class="err">commit</span> <span class="err">-m</span> <span class="err">msg</span> <span class="err">-a</span>
+
+<span class="nl">push</span><span class="o">:</span>
+    <span class="err">git</span> <span class="err">push</span> <span class="err">origin</span> <span class="err">master</span>
+
+<span class="nl">serve</span><span class="o">:</span>
+    <span class="err">jekyll</span> <span class="err">serve</span> <span class="err">--watch</span> <span class="err">--force_polling</span>
+</code></pre>
+
+<p>serve &ndash;watch すると通知表示がうざいので、&gt;/dev/null にしてもいいかも。</p>
+
+<h2 id="カスタマイズ">カスタマイズ</h2>
+
+<h3 id="レイアウトの変更">レイアウトの変更</h3>
+
+<p>{% raw %} </p>
+
+<p>_layouts/default.html をいじくります。が、jekyll bootstrap だと 
+_includes/themes/bootstrap-3/default.html を使うようになっているので、
+これを直接いじくるか、コピーしてそっちをいじくります。</p>
+
+<p>サイドメニューをつけたいので、default.html の {{ content }} あたりのを以下のように変更。xs, sm では表示しないように。</p>
+<pre class="highlight html"><code>...
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"raw"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3 hidden-xs hidden-sm"</span><span class="nt">&gt;</span>
+       {% include sidebar %}
+     <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-9"</span><span class="nt">&gt;</span>
+       {{ content }}
+     <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+<p>sidebar を _includes/ 以下に作ってそれを include してます。</p>
+
+<p>sidebar ではカテゴリと最新記事を表示するようにしてます。category.html あたりからパクりました。</p>
+<pre class="highlight html"><code><span class="nt">&lt;h2&gt;</span>Category<span class="nt">&lt;/h2&gt;</span>
+
+<span class="nt">&lt;ul&gt;</span>
+{% for category in site.categories %} 
+  <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"\{\{ category[0] \}\}-ref"</span><span class="nt">&gt;</span>{{ category[0] | join: "/" }}<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    {% assign pages_list = category[1] %}  
+    {% include JB/pages_list %}
+  <span class="nt">&lt;/ul&gt;</span>
+{% endfor %}
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;h2&gt;</span>Recent Updated<span class="nt">&lt;/h2&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"posts"</span><span class="nt">&gt;</span>
+  {% for post in site.posts %}
+    <span class="nt">&lt;li&gt;&lt;span&gt;</span>{{ post.date | date_to_string }}<span class="nt">&lt;/span&gt;</span> <span class="ni">&amp;raquo;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ BASE_PATH }}{{ post.url }}"</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endfor %}
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+
+<h3 id="pygments">Pygments</h3>
+
+<p>コードの色分けはしたいですね。bootstrap3 には pygments が入っていないようなので、
+ぐぐって出てきたのを assets/themes/bootstrap-3/css/pygment_trac.css に保存し、default.html に link を加えます。</p>
+<pre class="highlight html"><code>...
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"{{ ASSET_PATH }}/css/pygment_trac.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">media=</span><span class="s">"all"</span><span class="nt">&gt;</span>
+</code></pre>
+
+<h3 id="ウェブ上での編集">ウェブ上での編集</h3>
+
+<p>ローカルでの編集を想定してるので、ウェブ上での編集は想定されていないので、
+prose.io を使う。あらかじめ登録しておく（authenticate するだけ）。</p>
+
+<p>post.html にprose.io の編集画面へのリンクをはると便利。日付の隣につける：</p>
+<pre class="highlight html"><code>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>{{ page.date | date_to_long_string }}<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://prose.io/#{{site.author.github}}/{{site.author.github}}.github.io/edit/master/{{ page.path }}"</span>  <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-edit"</span><span class="nt">&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+<h3 id="見出し番号">見出し番号</h3>
+<pre class="highlight css"><code><span class="nt">body</span> <span class="p">{</span>
+ <span class="nl">counter-reset</span><span class="p">:</span><span class="n">h1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h1</span><span class="p">{</span><span class="nl">counter-increment</span><span class="p">:</span><span class="n">h1</span><span class="p">;</span><span class="nl">counter-reset</span><span class="p">:</span><span class="n">h2</span><span class="p">;}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h2</span><span class="p">{</span><span class="nl">counter-increment</span><span class="p">:</span><span class="n">h2</span><span class="p">;</span><span class="nl">counter-reset</span><span class="p">:</span><span class="n">h3</span><span class="p">;}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h3</span><span class="p">{</span><span class="nl">counter-increment</span><span class="p">:</span><span class="n">h3</span><span class="p">;</span><span class="nl">counter-reset</span><span class="p">:</span><span class="n">h4</span><span class="p">;}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h4</span><span class="p">{</span><span class="nl">counter-increment</span><span class="p">:</span><span class="n">h4</span><span class="p">;</span><span class="nl">counter-reset</span><span class="p">:</span><span class="n">h5</span><span class="p">;}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h1</span><span class="nd">:before</span><span class="p">{</span><span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span> <span class="s1">". "</span><span class="p">;}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h2</span><span class="nd">:before</span><span class="p">{</span><span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span> <span class="s1">". "</span> <span class="n">counter</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span> <span class="s1">". "</span><span class="p">;}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h3</span><span class="nd">:before</span><span class="p">{</span><span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span> <span class="s1">". "</span> <span class="n">counter</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span> <span class="s1">"."</span> <span class="n">counter</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span> <span class="s1">" "</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.content</span> <span class="o">&gt;</span> <span class="nt">h4</span><span class="nd">:before</span><span class="p">{</span><span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span> <span class="s1">". "</span> <span class="n">counter</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span> <span class="s1">"."</span> <span class="n">counter</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span> <span class="s1">"."</span> <span class="n">counter</span><span class="p">(</span><span class="n">h4</span><span class="p">)</span> <span class="s1">" "</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+
+<h3 id="トップで最新記事を表示">トップで最新記事を表示</h3>
+
+<p><a href="http://paco.jp/blog/jekyll/ruby/2013/01/01/jekyll%E3%81%A6%E3%82%99%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%E3%83%98%E3%82%9A%E3%83%BC%E3%82%B7%E3%82%99%E3%81%ABsite.posts%E3%81%AE%E6%9C%80%E6%96%B0%E8%A8%98%E4%BA%8B%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B/">paco.jp » jekyllでトップページにsite.postsの最新記事を表示する</a>
+を参考に：</p>
+<pre class="highlight plaintext"><code>% vi index.md
+---
+layout: default
+---
+{% include JB/setup %}
+
+{% assign page = site.posts.first %}
+{% assign content = page.content %}
+
+
+{% include themes/bootstrap-3/post.html %}
+</code></pre>
+<pre class="highlight plaintext"><code>% vi _layout/default.html
+{% if page.url == '/index.html' %}
+{% assign page = site.posts.first %}
+{% endif %}
+...
+&lt;link rel='canonical' href='{{site.root_url}}{{page.url}}' /&gt;
+...
+</code></pre>
+
+<h3 id="プラグイン">プラグイン</h3>
+
+<ul>
+<li>amazon<em>tag: <a href="https://github.com/nitoyon/tech.nitoyon.com/blob/master/">https://github.com/nitoyon/tech.nitoyon.com/blob/master/</a></em>plugins/tags/amazon.rb</li>
+</ul>
+
+<h2 id="tips">Tips</h2>
+
+<h3 id=".emacs">.emacs</h3>
+
+<p>iso-2022-jp だとエラーになるので、utf-8 に。</p>
+<pre class="highlight plaintext"><code>(set-language-environment "Japanese")
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+</code></pre>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li><a href="http://paco.jp/blog/jekyll/ruby/2013/01/01/jekyll%E3%81%A6%E3%82%99%E3%83%88%E3%83%83%E3%83%95%E3%82%9A%E3%83%98%E3%82%9A%E3%83%BC%E3%82%B7%E3%82%99%E3%81%ABsite.posts%E3%81%AE%E6%9C%80%E6%96%B0%E8%A8%98%E4%BA%8B%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%99%E3%82%8B/">paco.jp » jekyllでトップページにsite.postsの最新記事を表示する</a></li>
+</ul>
+
+<p>{% endraw %}</p>
+
+  </section>
+
+  <footer>
+    <div>
+      Posted by author 
+      in <a href="../categories/software.html">software</a>
+      at 02 Nov 2014 
+      on <a href="jekyll-bootstrap.html">this permlink</a>.
+    </div>
+    <div class="share_sns">
+      <!-- %= partial("partials/share_twitter", locals: {username: 'foo'}) % -->  
+      
+
+<span class="share_twitter">
+  <a href="https://twitter.com/share" class="twitter-share-button" >Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</span>
+  
+    </div>
+    <ul class="tag_box inline">
+    </ul>
+
+    <!-- pager -->
+    <nav>
+      <ul class="pager">
+	<li class="previous">
+	  <a data-toggle="" title="開発環境のセットアップ" href="development-environment.html"><span>&larr;</span>開発環境のセットアップ</a>
+	</li>
+
+	<li class="next">
+	  <a data-toggle="" title="Sinatra tips" href="sinatra-tips.html">Sinatra tips<span>&rarr;</span></a>
+	</li>
+      </ul>
+    </nav>
+
+
+  </footer>
+</article>
+
+
+	</div>
+	<div class="pane col-sm-3">  <!--  hidden-xs hidden-sm" -->
+	  <div class="sidebar">
+  <!-- %= partial("partials/_google_custom_search") % -->
+  <!-- ================ -->
+  <aside>
+    <h2><a href="../../profile.html">Profile</a></h2>
+    <p>
+      author 
+    </p>
+    <p>site description</p>
+  </aside>
+  <!-- ================ -->
+  <aside>
+    <h2><a href="../../categories.html">Categories</a></h2>
+    <div>
+      <h3><a href="../categories/middleman.html">middleman</a></h3>
+      <ul class="article_list">
+	<li>
+	    <a href="../middleman/branch_version.html">branche と version</a>
+	<li>
+	    <a href="../middleman/extension-memo.html">extension覚書</a>
+	<li>
+	    <a href="../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a>
+	<li>
+	    <a href="../middleman/extension.html">Middleman の extensionを書くための覚書</a>
+	<li>
+	    <a href="../middleman/redcarpet-toc.html">middlemanページの目次を作る</a>
+	<li>
+	    <a href="../middleman/explore_middleman-01.html">middleman を読む</a>
+	<li>
+	    <a href="../middleman/03-customize.html">Middlemanのススメ　第３回：カスタマイズ</a>
+	<li>
+	    <a href="../middleman/01-introduction.html">Middlemanのススメ　第１回：イントロダクション</a>
+      </ul>
+      <h3><a href="../categories/software.html">software</a></h3>
+      <ul class="article_list">
+	<li>
+	    <a href="build-status-badges.html">build status バッジをつける</a>
+	<li>
+	    <a href="middleman-amazon-helper.html">Amazon Helper for Middleman (amazon_helper.rb)</a>
+	<li>
+	    <a href="twilog2text.html">Twilog からテキストのみを抽出するやつ</a>
+	<li>
+	    <a href="s5-deploy-gh-pages.html">s5 でスライドショー作って gh-pages に deploy する</a>
+	<li>
+	    <a href="togetter2text.html">Togetter からテキストのみを抽出するやつ（togetter2text.rb）</a>
+	<li>
+	    <a href="heroku-deployer.html">HerokuDeployerを使った GitHub から heroku への自動デプロイ</a>
+	<li>
+	    <a href="sinatra-tips.html">Sinatra tips</a>
+	<li>
+	    jekyll bootstrap + github pages でブログ運用
+	<li>
+	    <a href="development-environment.html">開発環境のセットアップ</a>
+      </ul>
+      <h3><a href="../categories/cooking.html">cooking</a></h3>
+      <ul class="article_list">
+	<li>
+	    <a href="../cooking/pandoko.html">パン床を試す</a>
+      </ul>
+      <h3><a href="../categories/figureskating.html">figureskating</a></h3>
+      <ul class="article_list">
+	<li>
+	    <a href="../figureskating/office-turn-training.html">スリーターンの陸上イメトレ</a>
+	<li>
+	    <a href="../figureskating/jumps_by_route_location.html">独断と偏見によるルートと場所によるジャンプの見分け方</a>
+	<li>
+	    <a href="../figureskating/smile-project-problems.html">スマイルプロジェクトの問題点と贈呈状況・会計報告についてのフォローアップ</a>
+	<li>
+	    <a href="../figureskating/ijs-judge-random-order.html">ランダムオーダー：スコアシートでのジャッジの表示順は選手ごとに異なるか？</a>
+	<li>
+	    <a href="../figureskating/presentation-technic-akiko-suzuki-2013sp.html">「表現力」と表現技術：鈴木明子全日本2013ショートを例にとって</a>
+	<li>
+	    <a href="../figureskating/presentation-technic.html">「表現力」と表現技術</a>
+	<li>
+	    <a href="../figureskating/obo-relative-absolute.html">旧採点は相対評価？</a>
+	<li>
+	    <a href="../figureskating/abbr-level-features.html">ロシア大会のリザルトで使用されているスピン、ステップのレベル特徴略語</a>
+	<li>
+	    <a href="../figureskating/breakding-down-the-ijs.html">Breaking Down the IJS (The Skating Lesson)</a>
+	<li>
+	    <a href="../figureskating/how-to-create-explanation-movie-for-fs.html">フィギュアスケート解説動画の作り方</a>
+	<li><a href="../categories/figureskating.html">...</a>
+      </ul>
+      <h3><a href="../categories/game.html">game</a></h3>
+      <ul class="article_list">
+	<li>
+	    <a href="../game/kancolle.html">艦これ覚書</a>
+	<li>
+	    <a href="../game/ingress.html">ingress 覚書</a>
+      </ul>
+      <h3><a href="../categories/hobby.html">hobby</a></h3>
+      <ul class="article_list">
+	<li>
+	    <a href="../hobby/photographing-figure.html">フィギュア撮影：憂、ミク</a>
+	<li>
+	    <a href="../hobby/drip-coffee.html">コーヒードリップの愉しみ</a>
+      </ul>
+    </div>
+  </aside>
+  <!-- ================ -->
+  <aside>
+    <h2><a href="/tags.html">Tags</a></h2>
+    <ul class="tag_box inline">
+      <li><a href="/tags.html#turn">turn <span>1</span></a></li>
+      <li><a href="/tags.html#spin">spin <span>1</span></a></li>
+      <li><a href="/tags.html#level">level <span>1</span></a></li>
+      <li><a href="/tags.html#middleman">middleman <span>1</span></a></li>
+    </ul>
+  </aside>
+  <!-- ================ -->  
+  <aside>
+    <h2><a href="/articlesarchives.html">Archives</a></h2>
+    <ul>
+      <li><a href="../archives/2015/04.html">Apr 2015</a>  (4)</li>
+      <li><a href="../archives/2015/03.html">Mar 2015</a>  (10)</li>
+      <li><a href="../archives/2015/02.html">Feb 2015</a>  (10)</li>
+      <li><a href="../archives/2015/01.html">Jan 2015</a>  (1)</li>
+      <li><a href="../archives/2014/12.html">Dec 2014</a>  (3)</li>
+      <li><a href="../archives/2014/11.html">Nov 2014</a>  (11)</li>
+    </ul>
+  </aside>
+  
+  <!-- ================ -->  
+  <aside>
+    <h2><a href="/articles">Recent Articles</a></h2>
+
+    <h4>13 Apr 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/branch_version.html">branche と version</a></li>
+    </ul>
+    <h4>12 Apr 2015</h4>
+    <ul class="article_list">
+      <li><a href="build-status-badges.html">build status バッジをつける</a></li>
+    </ul>
+    <h4>11 Apr 2015</h4>
+    <ul class="article_list">
+      <li><a href="../cooking/pandoko.html">パン床を試す</a></li>
+    </ul>
+    <h4>05 Apr 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/extension-memo.html">extension覚書</a></li>
+    </ul>
+    <h4>27 Mar 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a></li>
+      <li><a href="../middleman/extension.html">Middleman の extensionを書くための覚書</a></li>
+    </ul>
+    <h4>23 Mar 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/redcarpet-toc.html">middlemanページの目次を作る</a></li>
+    </ul>
+    <h4>19 Mar 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/explore_middleman-01.html">middleman を読む</a></li>
+    </ul>
+    <h4>18 Mar 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/03-customize.html">Middlemanのススメ　第３回：カスタマイズ</a></li>
+    </ul>
+    <h4>17 Mar 2015</h4>
+    <ul class="article_list">
+      <li><a href="../middleman/01-introduction.html">Middlemanのススメ　第１回：イントロダクション</a></li>
+    </ul>
+  </aside>
+  
+
+<!--
+  <aside>
+    <h2>Series</h2>
+
+	<h3>middleman</h3>
+	<ol>
+	    <li><a href="../middleman/01-introduction.html">Middlemanのススメ　第１回：イントロダクション</a>
+	    <li><a href="../middleman/03-customize.html">Middlemanのススメ　第３回：カスタマイズ</a>
+	</ol>
+      </li>
+
+  </aside>
+  <hr>
+-->
+</div>
+
+	</div>
+      </div>
+
+      <!-- footer -->
+      <div class="row">
+	<footer id="footer" class="pane">
+	  <div class="copyright">
+	    &copy; 2014-2015 by author (your@email.com)	    
+	    powered by <a href="https://middlemanapp.com">middleman</a> and <a href="http://github.com/atarukodaka/middleman-aks">middleman-aks</a>.
+	  </div>
+	</footer>
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </body>
+</html>
+
+
+
