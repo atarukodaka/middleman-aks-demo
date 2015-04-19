@@ -238,85 +238,88 @@ footer {
   /* line 235, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
   footer .share_sns {
     padding: 10px 0 10px 0; }
+  /* line 238, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+  footer .pager, footer .pagination {
+    font-size: x-small; }
 
 /* article summary */
-/* line 243, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 246, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .article_summary h1 {
   font-size: large;
   margin-bottom: 5px; }
-/* line 247, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 250, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .article_summary .page_content {
   padding: 10px 0px 10px 0px; }
 
 /*****************************************************************/
 /* numbering headings */
-/* line 255, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 259, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 body {
   counter-reset: h1; }
 
-/* line 260, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h1 {
   counter-increment: h1;
   counter-reset: h2; }
-/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h1:before {
   color: #888;
   font-size: large; }
-/* line 260, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h2 {
   counter-increment: h2;
   counter-reset: h3; }
-/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h2:before {
   color: #888;
   font-size: large; }
-/* line 260, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h3 {
   counter-increment: h3;
   counter-reset: h4; }
-/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h3:before {
   color: #888;
   font-size: large; }
-/* line 260, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h4 {
   counter-increment: h4;
   counter-reset: h5; }
-/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h4:before {
   color: #888;
   font-size: large; }
-/* line 260, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h5 {
   counter-increment: h5;
   counter-reset: h6; }
-/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h5:before {
   color: #888;
   font-size: large; }
-/* line 260, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h6 {
   counter-increment: h6;
   counter-reset: h7; }
-/* line 264, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h6:before {
   color: #888;
   font-size: large; }
-/* line 268, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 272, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h2:before {
   content: counter(h2) ". "; }
-/* line 269, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 273, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h3:before {
   content: counter(h2) "." counter(h3) ". "; }
-/* line 270, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 274, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h4:before {
   content: counter(h2) "." counter(h3) "." counter(h4) ". "; }
-/* line 271, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 275, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 .numbering_headings h5:before {
   content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "; }
 
 /*****************************************************************/
 /* ninja */
-/* line 278, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
+/* line 282, /home/vagrant/src/tmp/aks-demo/source/stylesheets/style.css.scss */
 #nin_ad {
   display: none; }

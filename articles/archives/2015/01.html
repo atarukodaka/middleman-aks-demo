@@ -6,8 +6,8 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <title>Archives for Jan 2015 - site title</title>
    
-    <script src="/middleman-aks-demo/javascripts/all.js" type="text/javascript"></script>
-    <link href="/middleman-aks-demo/stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+    <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
     
   </head>
   
@@ -35,7 +35,7 @@
 	  <div class="collapse navbar-collapse" id="topHeader">
 	    <ul class="nav navbar-nav">
  	      <li><a href="../../archives.html">Archives</a></li>
- 	      <li><a href="../../../categories.html">Categories</a></li>
+ 	      <li><a href="../../categories.html">Categories</a></li>
  	      <li><a href="../../../profile.html">Profile</a></li>
  	      <li><a href="../../../sitemap.html">Sitemap</a></li>
 	    </ul>
@@ -51,7 +51,7 @@
 	  
 <section class="page">
   <header>
-    <nav class="crumbs"><ol class="breadcrumb"><li><a href="../../../">Home</a></li><li><a href="../../">Articles</a></li><li><a href="../../archives.html">Archives</a></li><li><a href="../2015.html"></a></li><li class="active"></li></ol></nav>
+    <nav class="crumbs"><ol class="breadcrumb"><li><a href="../../../">Home</a></li><li><a href="../../">Articles</a></li><li><a href="../../archives.html">Archives</a></li><li><a href="../2015.html">2015</a></li><li class="active"></li></ol></nav>
     <h1>Archives for Jan 2015</h1>
   </header>
 
@@ -60,6 +60,34 @@
 
 
 
+<article class="article_summary">
+  <header>
+    <h1><a href="../../software/ruby.html">ruby sample</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/software.html">software</a>  |
+15 Apr 2015 |
+<a href="../../software/ruby.html">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    install
+% rbenv install 2.0.0
+
+
+sample
+def foo
+  puts :bar
+end
+
+
+    <a href="../../software/ruby.html">... read more</a>
+  </section>
+</article>
 <article class="article_summary">
   <header>
     <h1><a href="../../middleman/branch_version.html">branche と version</a></h1>
@@ -188,6 +216,37 @@ Middleman::Cli::Base.start
 </article>
 <article class="article_summary">
   <header>
+    <h1><a href="../../middleman/extension.html">Middleman の extensionを書くための覚書</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/middleman.html">middleman</a>  |
+27 Mar 2015 |
+<a href="../../middleman/extension.html">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    まとめ中
+
+基本
+
+Middleman::Extension　から派生させたクラスを作り（Middleman::Hello::Extension）、
+そこに helper 関数の追加、 resource の manipulate、hook の追加などする。
+そしてMiddleman::Extension.register(:hello, Middleman::Hello::Extension) した上で、
+config.rb で activate :hello させれば有効になる。
+
+参考
+
+
+
+    <a href="../../middleman/extension.html">... read more</a>
+  </section>
+</article>
+<article class="article_summary">
+  <header>
     <h1><a href="../../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a></h1>
     <section class="page_info">
       <small>
@@ -219,37 +278,6 @@ Middleman カスタム拡張チュートリアル - Qiita
 extension なので middleman-hello.gemspec に入れておく。
 % vi middleman-hello
     <a href="../../middleman/cucumber.html">... read more</a>
-  </section>
-</article>
-<article class="article_summary">
-  <header>
-    <h1><a href="../../middleman/extension.html">Middleman の extensionを書くための覚書</a></h1>
-    <section class="page_info">
-      <small>
-| 
-<a href="../../categories/middleman.html">middleman</a>  |
-27 Mar 2015 |
-<a href="../../middleman/extension.html">permalink</a>
- |
-</small>
-
-    </section>
-  </header>
-  <section class="page_content">
-    まとめ中
-
-基本
-
-Middleman::Extension　から派生させたクラスを作り（Middleman::Hello::Extension）、
-そこに helper 関数の追加、 resource の manipulate、hook の追加などする。
-そしてMiddleman::Extension.register(:hello, Middleman::Hello::Extension) した上で、
-config.rb で activate :hello させれば有効になる。
-
-参考
-
-
-
-    <a href="../../middleman/extension.html">... read more</a>
   </section>
 </article>
 <article class="article_summary">
@@ -569,29 +597,6 @@ Prinz 45/45
 </article>
 <article class="article_summary">
   <header>
-    <h1><a href="../../figureskating/smile-project-problems.html">スマイルプロジェクトの問題点と贈呈状況・会計報告についてのフォローアップ</a></h1>
-    <section class="page_info">
-      <small>
-| 
-<a href="../../categories/figureskating.html">figureskating</a>  |
-27 Feb 2015 |
-<a href="../../figureskating/smile-project-problems.html">permalink</a>
- |
-</small>
-
-    </section>
-  </header>
-  <section class="page_content">
-    概要と現状
-
-さて、白熱のソチオリンピックから一年が経ちましたが、その結果を受けて発足され、いろいろ問題を指摘されながらも進められた、とあるプロジェクトについてフォローアップしてみます。あまり楽しい話でもないので興味のない方はスルーして下さい。
-
-概要としては、「ソチで金メダルをとれなかった真央ちゃんにゴールドを越えるプラチナメダルを贈ろう！募金よろ」、というものです。メッセージ集や自作プロトコル（）なども一緒につけたり、他の選手にも一応クリスタルメダルを贈ろうとかもありますが、それらは後付けの
-    <a href="../../figureskating/smile-project-problems.html">... read more</a>
-  </section>
-</article>
-<article class="article_summary">
-  <header>
     <h1><a href="../../software/twilog2text.html">Twilog からテキストのみを抽出するやつ</a></h1>
     <section class="page_info">
       <small>
@@ -643,6 +648,29 @@ GPシリーズ、オリンピック、ワールドなどでは、「ランダム
 
 Spec
     <a href="../../figureskating/ijs-judge-random-order.html">... read more</a>
+  </section>
+</article>
+<article class="article_summary">
+  <header>
+    <h1><a href="../../figureskating/smile-project-problems.html">スマイルプロジェクトの問題点と贈呈状況・会計報告についてのフォローアップ</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/figureskating.html">figureskating</a>  |
+27 Feb 2015 |
+<a href="../../figureskating/smile-project-problems.html">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    概要と現状
+
+さて、白熱のソチオリンピックから一年が経ちましたが、その結果を受けて発足され、いろいろ問題を指摘されながらも進められた、とあるプロジェクトについてフォローアップしてみます。あまり楽しい話でもないので興味のない方はスルーして下さい。
+
+概要としては、「ソチで金メダルをとれなかった真央ちゃんにゴールドを越えるプラチナメダルを贈ろう！募金よろ」、というものです。メッセージ集や自作プロトコル（）なども一緒につけたり、他の選手にも一応クリスタルメダルを贈ろうとかもありますが、それらは後付けの
+    <a href="../../figureskating/smile-project-problems.html">... read more</a>
   </section>
 </article>
 <article class="article_summary">
@@ -715,31 +743,6 @@ asef
 </article>
 <article class="article_summary">
   <header>
-    <h1><a href="../../figureskating/presentation-technic.html">「表現力」と表現技術</a></h1>
-    <section class="page_info">
-      <small>
-| 
-<a href="../../categories/figureskating.html">figureskating</a>  |
-13 Feb 2015 |
-<a href="../../figureskating/presentation-technic.html">permalink</a>
- |
-</small>
-
-    </section>
-  </header>
-  <section class="page_content">
-    twitter でつぶやいたの（夜のフィギュアスケート語り部：「表現技術」(2015/2/11)）をまとめなおしました：
-
-「表現力がある」→「表現技術に秀でている」
-
-「表現力がある」っていうのとなんだかあやふやなので、「表現技術に秀でている」のほうが適当かでしょうか。感情表現の引き出しが多くそれぞれの動作が明確で、適切なタイミングで引き出せる。そういった表現するための技術が高い。
-
-前にプルが体育会系TVでみゆちゃんに「これが表現力です」ってピシッと両手を広げて上を見るポージングをしたやつ、
-    <a href="../../figureskating/presentation-technic.html">... read more</a>
-  </section>
-</article>
-<article class="article_summary">
-  <header>
     <h1><a href="../../figureskating/obo-relative-absolute.html">旧採点は相対評価？</a></h1>
     <section class="page_info">
       <small>
@@ -790,6 +793,31 @@ http://h3poteto.hatenablog.com/entry/2013/10/20/135403 を試してみたが
 
 
     <a href="../../software/togetter2text.html">... read more</a>
+  </section>
+</article>
+<article class="article_summary">
+  <header>
+    <h1><a href="../../figureskating/presentation-technic.html">「表現力」と表現技術</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/figureskating.html">figureskating</a>  |
+13 Feb 2015 |
+<a href="../../figureskating/presentation-technic.html">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    twitter でつぶやいたの（夜のフィギュアスケート語り部：「表現技術」(2015/2/11)）をまとめなおしました：
+
+「表現力がある」→「表現技術に秀でている」
+
+「表現力がある」っていうのとなんだかあやふやなので、「表現技術に秀でている」のほうが適当かでしょうか。感情表現の引き出しが多くそれぞれの動作が明確で、適切なタイミングで引き出せる。そういった表現するための技術が高い。
+
+前にプルが体育会系TVでみゆちゃんに「これが表現力です」ってピシッと両手を広げて上を見るポージングをしたやつ、
+    <a href="../../figureskating/presentation-technic.html">... read more</a>
   </section>
 </article>
 <article class="article_summary">
@@ -861,6 +889,46 @@ http://ameblo.jp/sienna12/entry-11974076499.html
 http://ameblo.jp/sienna12/entry-11974950576.html
 http://ameblo
     <a href="../../figureskating/breakding-down-the-ijs.html">... read more</a>
+  </section>
+</article>
+<article class="article_summary">
+  <header>
+    <h1><a href="../../software/">software</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/software.html">software</a>  |
+02 Jan 2015 |
+<a href="../../software/">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    software
+
+    <a href="../../software/">... read more</a>
+  </section>
+</article>
+<article class="article_summary">
+  <header>
+    <h1><a href="../../cooking/egg.html">cooking egg</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/cooking.html">cooking</a>  |
+01 Jan 2015 |
+<a href="../../cooking/egg.html">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    cooking egg.
+
+    <a href="../../cooking/egg.html">... read more</a>
   </section>
 </article>
 <article class="article_summary">
@@ -1017,32 +1085,6 @@ cw軌道のLBO から ccw に体を捻って LFO にターンしてます
 </article>
 <article class="article_summary">
   <header>
-    <h1><a href="../../figureskating/haruka-imai-stsq-no-value.html">TEBフリー今井遥のステップシークエンスノーカウントについて</a></h1>
-    <section class="page_info">
-      <small>
-| 
-<a href="../../categories/figureskating.html">figureskating</a>  |
-27 Nov 2014 |
-<a href="../../figureskating/haruka-imai-stsq-no-value.html">permalink</a>
- |
-</small>
-
-    </section>
-  </header>
-  <section class="page_content">
-    ステップシークエンスの要件
-
-TEBフリーでの今井選手のステップシークエンスが認定されてません：TEB14 Ladies FS Judge Score
-
-これは、「氷面を十分に活用すること」という要件を満たしていないためと推測されます。
-
-テクニカルハンドブック より
-ステップ・シークェンスにはもはや要求されるパターンはないが、氷面を十分に活用していなければならない。ステップ・シークェンスは目に見えて確認でき、氷面のほぼ全体を活用して行われなければならず、短辺フェンスから短辺フェンスへの長さを 
-    <a href="../../figureskating/haruka-imai-stsq-no-value.html">... read more</a>
-  </section>
-</article>
-<article class="article_summary">
-  <header>
     <h1><a href="../../figureskating/all_japan_junior_competition.html">全日本ジュニア選手権大会結果およびシニア推薦選手</a></h1>
     <section class="page_info">
       <small>
@@ -1085,6 +1127,32 @@ TEBフリーでの今井選手のステップシークエンスが認定され�
 
 http://twitter.com/soleil_yk22/status/
     <a href="../../figureskating/all_japan_junior_competition.html">... read more</a>
+  </section>
+</article>
+<article class="article_summary">
+  <header>
+    <h1><a href="../../figureskating/haruka-imai-stsq-no-value.html">TEBフリー今井遥のステップシークエンスノーカウントについて</a></h1>
+    <section class="page_info">
+      <small>
+| 
+<a href="../../categories/figureskating.html">figureskating</a>  |
+27 Nov 2014 |
+<a href="../../figureskating/haruka-imai-stsq-no-value.html">permalink</a>
+ |
+</small>
+
+    </section>
+  </header>
+  <section class="page_content">
+    ステップシークエンスの要件
+
+TEBフリーでの今井選手のステップシークエンスが認定されてません：TEB14 Ladies FS Judge Score
+
+これは、「氷面を十分に活用すること」という要件を満たしていないためと推測されます。
+
+テクニカルハンドブック より
+ステップ・シークェンスにはもはや要求されるパターンはないが、氷面を十分に活用していなければならない。ステップ・シークェンスは目に見えて確認でき、氷面のほぼ全体を活用して行われなければならず、短辺フェンスから短辺フェンスへの長さを 
+    <a href="../../figureskating/haruka-imai-stsq-no-value.html">... read more</a>
   </section>
 </article>
 <article class="article_summary">
@@ -1347,29 +1415,12 @@ vigrant: http://www.vagrantup.com/downloads.html
   </aside>
   <!-- ================ -->
   <aside>
-    <h2><a href="../../../categories.html">Categories</a></h2>
+    <h2><a href="/categories.html">Categories</a></h2>
     <div>
-      <h3><a href="../../categories/middleman.html">middleman</a></h3>
-      <ul class="article_list">
-	<li>
-	    <a href="../../middleman/branch_version.html">branche と version</a>
-	<li>
-	    <a href="../../middleman/extension-memo.html">extension覚書</a>
-	<li>
-	    <a href="../../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a>
-	<li>
-	    <a href="../../middleman/extension.html">Middleman の extensionを書くための覚書</a>
-	<li>
-	    <a href="../../middleman/redcarpet-toc.html">middlemanページの目次を作る</a>
-	<li>
-	    <a href="../../middleman/explore_middleman-01.html">middleman を読む</a>
-	<li>
-	    <a href="../../middleman/03-customize.html">Middlemanのススメ　第３回：カスタマイズ</a>
-	<li>
-	    <a href="../../middleman/01-introduction.html">Middlemanのススメ　第１回：イントロダクション</a>
-      </ul>
       <h3><a href="../../categories/software.html">software</a></h3>
       <ul class="article_list">
+	<li>
+	    <a href="../../software/ruby.html">ruby sample</a>
 	<li>
 	    <a href="../../software/build-status-badges.html">build status バッジをつける</a>
 	<li>
@@ -1381,18 +1432,40 @@ vigrant: http://www.vagrantup.com/downloads.html
 	<li>
 	    <a href="../../software/togetter2text.html">Togetter からテキストのみを抽出するやつ（togetter2text.rb）</a>
 	<li>
+	    <a href="../../software/">software</a>
+	<li>
 	    <a href="../../software/heroku-deployer.html">HerokuDeployerを使った GitHub から heroku への自動デプロイ</a>
 	<li>
 	    <a href="../../software/sinatra-tips.html">Sinatra tips</a>
 	<li>
 	    <a href="../../software/jekyll-bootstrap.html">jekyll bootstrap + github pages でブログ運用</a>
+	<li><a href="../../categories/software.html">...</a>
+      </ul>
+      <h3><a href="../../categories/middleman.html">middleman</a></h3>
+      <ul class="article_list">
 	<li>
-	    <a href="../../software/development-environment.html">開発環境のセットアップ</a>
+	    <a href="../../middleman/branch_version.html">branche と version</a>
+	<li>
+	    <a href="../../middleman/extension-memo.html">extension覚書</a>
+	<li>
+	    <a href="../../middleman/extension.html">Middleman の extensionを書くための覚書</a>
+	<li>
+	    <a href="../../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a>
+	<li>
+	    <a href="../../middleman/redcarpet-toc.html">middlemanページの目次を作る</a>
+	<li>
+	    <a href="../../middleman/explore_middleman-01.html">middleman を読む</a>
+	<li>
+	    <a href="../../middleman/03-customize.html">Middlemanのススメ　第３回：カスタマイズ</a>
+	<li>
+	    <a href="../../middleman/01-introduction.html">Middlemanのススメ　第１回：イントロダクション</a>
       </ul>
       <h3><a href="../../categories/cooking.html">cooking</a></h3>
       <ul class="article_list">
 	<li>
 	    <a href="../../cooking/pandoko.html">パン床を試す</a>
+	<li>
+	    <a href="../../cooking/egg.html">cooking egg</a>
       </ul>
       <h3><a href="../../categories/figureskating.html">figureskating</a></h3>
       <ul class="article_list">
@@ -1401,15 +1474,15 @@ vigrant: http://www.vagrantup.com/downloads.html
 	<li>
 	    <a href="../../figureskating/jumps_by_route_location.html">独断と偏見によるルートと場所によるジャンプの見分け方</a>
 	<li>
-	    <a href="../../figureskating/smile-project-problems.html">スマイルプロジェクトの問題点と贈呈状況・会計報告についてのフォローアップ</a>
-	<li>
 	    <a href="../../figureskating/ijs-judge-random-order.html">ランダムオーダー：スコアシートでのジャッジの表示順は選手ごとに異なるか？</a>
+	<li>
+	    <a href="../../figureskating/smile-project-problems.html">スマイルプロジェクトの問題点と贈呈状況・会計報告についてのフォローアップ</a>
 	<li>
 	    <a href="../../figureskating/presentation-technic-akiko-suzuki-2013sp.html">「表現力」と表現技術：鈴木明子全日本2013ショートを例にとって</a>
 	<li>
-	    <a href="../../figureskating/presentation-technic.html">「表現力」と表現技術</a>
-	<li>
 	    <a href="../../figureskating/obo-relative-absolute.html">旧採点は相対評価？</a>
+	<li>
+	    <a href="../../figureskating/presentation-technic.html">「表現力」と表現技術</a>
 	<li>
 	    <a href="../../figureskating/abbr-level-features.html">ロシア大会のリザルトで使用されているスピン、ステップのレベル特徴略語</a>
 	<li>
@@ -1448,10 +1521,10 @@ vigrant: http://www.vagrantup.com/downloads.html
   <aside>
     <h2><a href="/articlesarchives.html">Archives</a></h2>
     <ul>
-      <li><a href="04.html">Apr 2015</a>  (4)</li>
+      <li><a href="04.html">Apr 2015</a>  (5)</li>
       <li><a href="03.html">Mar 2015</a>  (10)</li>
       <li><a href="02.html">Feb 2015</a>  (10)</li>
-      <li><a href="01.html">Jan 2015</a>  (1)</li>
+      <li><a href="01.html">Jan 2015</a>  (3)</li>
       <li><a href="../2014/12.html">Dec 2014</a>  (3)</li>
       <li><a href="../2014/11.html">Nov 2014</a>  (11)</li>
     </ul>
@@ -1461,6 +1534,10 @@ vigrant: http://www.vagrantup.com/downloads.html
   <aside>
     <h2><a href="/articles">Recent Articles</a></h2>
 
+    <h4>15 Apr 2015</h4>
+    <ul class="article_list">
+      <li><a href="../../software/ruby.html">ruby sample</a></li>
+    </ul>
     <h4>13 Apr 2015</h4>
     <ul class="article_list">
       <li><a href="../../middleman/branch_version.html">branche と version</a></li>
@@ -1479,8 +1556,8 @@ vigrant: http://www.vagrantup.com/downloads.html
     </ul>
     <h4>27 Mar 2015</h4>
     <ul class="article_list">
-      <li><a href="../../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a></li>
       <li><a href="../../middleman/extension.html">Middleman の extensionを書くための覚書</a></li>
+      <li><a href="../../middleman/cucumber.html">cucumber で middleman extension の開発とテスト</a></li>
     </ul>
     <h4>23 Mar 2015</h4>
     <ul class="article_list">
@@ -1493,10 +1570,6 @@ vigrant: http://www.vagrantup.com/downloads.html
     <h4>18 Mar 2015</h4>
     <ul class="article_list">
       <li><a href="../../middleman/03-customize.html">Middlemanのススメ　第３回：カスタマイズ</a></li>
-    </ul>
-    <h4>17 Mar 2015</h4>
-    <ul class="article_list">
-      <li><a href="../../middleman/01-introduction.html">Middlemanのススメ　第１回：イントロダクション</a></li>
     </ul>
   </aside>
   
